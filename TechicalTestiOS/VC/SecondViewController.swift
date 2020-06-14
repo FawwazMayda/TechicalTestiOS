@@ -10,6 +10,7 @@ import UIKit
 
 class SecondViewController: UIViewController {
 
+    var selected_genre_id = 0
     let ng = NetReq()
     var forData = [Genre]()
     @IBOutlet weak var tableView: UITableView!
@@ -20,6 +21,13 @@ class SecondViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         // Do any additional setup after loading the view.
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "GenreToBook" {
+            let destVC = segue.destination as? BookByGenreViewController
+            destVC?.genre_id = selected_genre_id
+        }
     }
 }
 
@@ -42,6 +50,9 @@ extension SecondViewController: UITableViewDataSource,UITableViewDelegate {
         return cell
     }
     
-    
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selected_genre_id = forData[indexPath.row].id
+        tableView.deselectRow(at: indexPath, animated: true)
+        performSegue(withIdentifier: "GenreToBook", sender: nil)
+    }
 }

@@ -92,9 +92,9 @@
 			isa = PBXGroup;
 			children = (
 				4DA6FA9E2495FFDD00F4EF1E /* WriterDetailFile.swift */,
-				4DA6FAA02495FFDD00F4EF1E /* BookDetailFiles.swift */,
 				4DA6FAA12495FFDD00F4EF1E /* GenreFiles.swift */,
 				4DA6FAA22495FFDD00F4EF1E /* BookFiles.swift */,
+				4DA6FAA02495FFDD00F4EF1E /* BookDetailFiles.swift */,
 				4DA6FAA32495FFDD00F4EF1E /* BookUpdateFile.swift */,
 				4DA6FA9F2495FFDD00F4EF1E /* NetReq.swift */,
 				4DA6FAAA2496015500F4EF1E /* NetReqDelegate.swift */,

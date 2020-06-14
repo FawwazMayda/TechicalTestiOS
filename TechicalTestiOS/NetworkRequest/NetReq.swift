@@ -41,29 +41,34 @@ class NetReq {
         }
     }
     
+    
+    //MARK: -Book By Genre
     func reqBookByGenre(genre_id: Int){
         let url = "https://cabaca.id:8443/api/v2/book/category?id=\(genre_id)"
         var requests = URLRequest(url: URL(string: url)!)
         requests.setValue("25e0bf00ab2fa7f03a9fa57035139e47ccb28c20658f6de907b8011347e369fb", forHTTPHeaderField: "x-dreamfactory-api-key")
         let task = session.dataTask(with: requests) { (data, response, error) in
             if let currentData = data {
-                self.parseBookByGenre(data: currentData)
+                self.delegate?.didGetBookByGenre(data: self.parseBookByGenre(data: currentData))
             }
         }
         task.resume()
     }
     
-    func parseBookByGenre(data: Data){
+    func parseBookByGenre(data: Data) -> [Book]{
         let decoder = JSONDecoder()
         do {
             let bookData =  try! decoder.decode(BookParse.self, from: data)
-            print(bookData.result[0].Writer_by_writer_id.status)
-            print(bookData.result[0].Writer_by_writer_id.User_by_user_id.name)
+            //print(bookData.result[0].Writer_by_writer_id.status)
+            //print(bookData.result[0].Writer_by_writer_id.User_by_user_id.name)
+            return bookData.result
         } catch {
             print(error)
         }
     }
     
+    
+    //MARK: - Book By Detail
     func reqBookByDetail(book_id: Int){
         let url = "https://cabaca.id:8443/api/v2/book/detail/\(book_id)"
         var requests = URLRequest(url: URL(string: url)!)

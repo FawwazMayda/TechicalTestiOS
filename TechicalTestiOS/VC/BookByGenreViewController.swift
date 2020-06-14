@@ -10,21 +10,46 @@ import UIKit
 
 class BookByGenreViewController: UIViewController {
 
+    var genre_id = 0
+    let ng = NetReq()
+    var bookByGenreData = [Book]()
+    @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        tableView.delegate = self
+        tableView.dataSource = self
+        ng.delegate = self
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        ng.reqBookByGenre(genre_id: genre_id)
     }
-    */
 
+}
+
+extension BookByGenreViewController: NetReqDelegate {
+    func didGetBookByGenre(data: [Book]) {
+        DispatchQueue.main.async {
+            self.bookByGenreData = data
+            self.tableView.reloadData()
+        }
+    }
+}
+extension BookByGenreViewController: UITableViewDelegate,UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return bookByGenreData.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "BookByGenreCell", for: indexPath)
+        cell.textLabel?.text = bookByGenreData[indexPath.row].title
+        return cell
+    }
+    
+    
+    
+    
 }
