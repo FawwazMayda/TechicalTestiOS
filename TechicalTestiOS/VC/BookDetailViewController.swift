@@ -37,23 +37,24 @@ class BookDetailViewController: UIViewController {
             DispatchQueue.main.async {
                 self.bookTitle.text = bookDetail.title
                 self.bookGenre.text = self.genre
+                self.bookSynopsis.text = bookDetail.synopsis
                 self.bookWriterButton.setTitle(bookDetail.Writer_by_writer_id.User_by_user_id.name, for: .normal)
                 if var coverURL = self.currentBookDetail?.cover_url {
                     let index = coverURL.index(coverURL.startIndex, offsetBy: 9)
                     let urlSubStr = coverURL.suffix(from: index)
-                    self.getImageFromUrl(imgURL: String(urlSubStr))
+                    self.getImageFromUrl(imgURL: String(urlSubStr),for: self.bookImageView)
                 }
             }
         }
     }
     
-    func getImageFromUrl(imgURL: String) {
+    func getImageFromUrl(imgURL: String,for img: UIImageView) {
         let url = "https://cabaca.id:8443/api/v2/files/covers/\(imgURL)&api_key=32ded42cfffb77dee86a29f43d36a3641849d4b5904aade9a79e9aa6cd5b5948"
         let urlRequests = URL(string: url)!
         let dataTask = URLSession.shared.dataTask(with: urlRequests) { (data, resp, error) in
             if let imgData = data {
                 DispatchQueue.main.async {
-                    self.bookImageView.image = UIImage(data: imgData)
+                    img.image = UIImage(data: imgData)
                 }
             }
         }

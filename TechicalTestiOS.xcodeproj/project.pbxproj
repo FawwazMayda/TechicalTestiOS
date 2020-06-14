@@ -23,6 +23,7 @@
 		4DA6FAAB2496015500F4EF1E /* NetReqDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA6FAAA2496015500F4EF1E /* NetReqDelegate.swift */; };
 		4DA6FAAE2496029600F4EF1E /* BookDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA6FAAD2496029600F4EF1E /* BookDetailViewController.swift */; };
 		4DA6FAB0249602BE00F4EF1E /* BookByGenreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA6FAAF249602BE00F4EF1E /* BookByGenreViewController.swift */; };
+		4DA6FAB324961B8600F4EF1E /* UpdateCustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA6FAB224961B8600F4EF1E /* UpdateCustomTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		4DA6FAAA2496015500F4EF1E /* NetReqDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetReqDelegate.swift; sourceTree = "<group>"; };
 		4DA6FAAD2496029600F4EF1E /* BookDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailViewController.swift; sourceTree = "<group>"; };
 		4DA6FAAF249602BE00F4EF1E /* BookByGenreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookByGenreViewController.swift; sourceTree = "<group>"; };
+		4DA6FAB224961B8600F4EF1E /* UpdateCustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateCustomTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 				4DA6FA9D2495FFDD00F4EF1E /* NetworkRequest */,
 				4DA6FAAC2496027300F4EF1E /* VC */,
 				4DA6FA872495FF9100F4EF1E /* AppDelegate.swift */,
+				4DA6FAB124961B5000F4EF1E /* CustomCell */,
 				4DA6FA892495FF9100F4EF1E /* SceneDelegate.swift */,
 				4DA6FA8F2495FF9100F4EF1E /* Main.storyboard */,
 				4DA6FA922495FF9200F4EF1E /* Assets.xcassets */,
@@ -111,6 +114,14 @@
 				4DA6FAAD2496029600F4EF1E /* BookDetailViewController.swift */,
 			);
 			path = VC;
+			sourceTree = "<group>";
+		};
+		4DA6FAB124961B5000F4EF1E /* CustomCell */ = {
+			isa = PBXGroup;
+			children = (
+				4DA6FAB224961B8600F4EF1E /* UpdateCustomTableViewCell.swift */,
+			);
+			path = CustomCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -189,6 +200,7 @@
 				4DA6FAAE2496029600F4EF1E /* BookDetailViewController.swift in Sources */,
 				4DA6FAA62495FFDD00F4EF1E /* BookDetailFiles.swift in Sources */,
 				4DA6FAA92495FFDD00F4EF1E /* BookUpdateFile.swift in Sources */,
+				4DA6FAB324961B8600F4EF1E /* UpdateCustomTableViewCell.swift in Sources */,
 				4DA6FAA52495FFDD00F4EF1E /* NetReq.swift in Sources */,
 				4DA6FA8C2495FF9100F4EF1E /* FirstViewController.swift in Sources */,
 				4DA6FA882495FF9100F4EF1E /* AppDelegate.swift in Sources */,
