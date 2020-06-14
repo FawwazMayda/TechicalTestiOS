@@ -37,7 +37,14 @@ class BookDetailViewController: UIViewController {
             DispatchQueue.main.async {
                 self.bookTitle.text = bookDetail.title
                 self.bookGenre.text = self.genre
-                self.bookSynopsis.text = bookDetail.synopsis
+
+                
+                let htmlData = Data(bookDetail.synopsis.utf8)
+                if let attributedString = try? NSAttributedString(data: htmlData, options: [.documentType: NSAttributedString.DocumentType.html], documentAttributes: nil) {
+                    self.bookSynopsis.attributedText = attributedString
+                }
+
+                
                 self.bookWriterButton.setTitle(bookDetail.Writer_by_writer_id.User_by_user_id.name, for: .normal)
                 if var coverURL = self.currentBookDetail?.cover_url {
                     let index = coverURL.index(coverURL.startIndex, offsetBy: 9)
