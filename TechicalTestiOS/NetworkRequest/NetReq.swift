@@ -125,16 +125,17 @@ class NetReq {
                       requests.setValue("25e0bf00ab2fa7f03a9fa57035139e47ccb28c20658f6de907b8011347e369fb", forHTTPHeaderField: "x-dreamfactory-api-key")
                       let task = session.dataTask(with: requests) { (data, response, error) in
                           if let currentData = data {
-                           self.parseWriterDetail(data: currentData)
+                            self.delegate?.didGetWriterDetail(data: self.parseWriterDetail(data: currentData))
                           }
                       }
                       task.resume()
     }
     
-    func parseWriterDetail(data: Data) {
+    func parseWriterDetail(data: Data) -> WriterDetail {
         do {
             let writerDetailData = try! JSONDecoder().decode(WriterDetailParse.self, from: data)
             print(writerDetailData.result.karya[0].title)
+            return writerDetailData.result
         } catch {
             print(error)
         }

@@ -19,6 +19,7 @@ class BookDetailViewController: UIViewController {
     let ng = NetReq()
     var book_id = 0
     var genre = ""
+    var writerId = 0
     var currentBookDetail : BookDetail?
     
     override func viewDidLoad() {
@@ -69,6 +70,15 @@ class BookDetailViewController: UIViewController {
     }
     
     @IBAction func writerButtonTapped(_ sender: Any) {
+        writerId = currentBookDetail?.Writer_by_writer_id.User_by_user_id.id as! Int
+        performSegue(withIdentifier: "ToWriterDetail", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ToWriterDetail" {
+            let destVC = segue.destination as? WriterDetailViewController
+            destVC?.writerId = writerId
+        }
     }
 }
 

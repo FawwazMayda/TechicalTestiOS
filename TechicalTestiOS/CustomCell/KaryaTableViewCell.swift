@@ -10,6 +10,8 @@ import UIKit
 
 class KaryaTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var karyaImageView: UIImageView!
+    @IBOutlet weak var karyaLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

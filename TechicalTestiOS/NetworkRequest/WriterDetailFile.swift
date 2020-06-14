@@ -18,6 +18,7 @@ struct WriterDetail: Codable {
     var name: String
     var username: String
     var photo_url: String
+    var phone: String?
     var email: String
     var deskripsi: String
     var karya: [Karya]

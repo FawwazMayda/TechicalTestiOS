@@ -13,6 +13,7 @@ protocol NetReqDelegate {
     func didGetBookUpdate(data: [BookUpdate])
     func didGetBookByGenre(data: [Book])
     func didGetBookDetail(data: BookDetail)
+    func didGetWriterDetail(data: WriterDetail)
 }
 
 extension NetReqDelegate {
@@ -29,6 +30,10 @@ extension NetReqDelegate {
     }
     
     func didGetBookDetail(data: BookDetail) {
+        
+    }
+    
+    func didGetWriterDetail(data: WriterDetail) {
         
     }
 }

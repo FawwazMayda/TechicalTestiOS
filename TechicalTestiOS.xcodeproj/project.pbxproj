@@ -115,10 +115,10 @@
 			isa = PBXGroup;
 			children = (
 				4DA6FA8B2495FF9100F4EF1E /* FirstViewController.swift */,
-				4DA6FAB82496261200F4EF1E /* WriterDetailViewController.swift */,
 				4DA6FA8D2495FF9100F4EF1E /* SecondViewController.swift */,
 				4DA6FAAF249602BE00F4EF1E /* BookByGenreViewController.swift */,
 				4DA6FAAD2496029600F4EF1E /* BookDetailViewController.swift */,
+				4DA6FAB82496261200F4EF1E /* WriterDetailViewController.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
