@@ -24,6 +24,7 @@
 		4DA6FAAE2496029600F4EF1E /* BookDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA6FAAD2496029600F4EF1E /* BookDetailViewController.swift */; };
 		4DA6FAB0249602BE00F4EF1E /* BookByGenreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA6FAAF249602BE00F4EF1E /* BookByGenreViewController.swift */; };
 		4DA6FAB324961B8600F4EF1E /* UpdateCustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA6FAB224961B8600F4EF1E /* UpdateCustomTableViewCell.swift */; };
+		4DA6FAB52496206600F4EF1E /* BookByGenreCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA6FAB42496206600F4EF1E /* BookByGenreCellTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		4DA6FAAD2496029600F4EF1E /* BookDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailViewController.swift; sourceTree = "<group>"; };
 		4DA6FAAF249602BE00F4EF1E /* BookByGenreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookByGenreViewController.swift; sourceTree = "<group>"; };
 		4DA6FAB224961B8600F4EF1E /* UpdateCustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateCustomTableViewCell.swift; sourceTree = "<group>"; };
+		4DA6FAB42496206600F4EF1E /* BookByGenreCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookByGenreCellTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				4DA6FAB224961B8600F4EF1E /* UpdateCustomTableViewCell.swift */,
+				4DA6FAB42496206600F4EF1E /* BookByGenreCellTableViewCell.swift */,
 			);
 			path = CustomCell;
 			sourceTree = "<group>";
@@ -208,6 +211,7 @@
 				4DA6FA8A2495FF9100F4EF1E /* SceneDelegate.swift in Sources */,
 				4DA6FAB0249602BE00F4EF1E /* BookByGenreViewController.swift in Sources */,
 				4DA6FAA72495FFDD00F4EF1E /* GenreFiles.swift in Sources */,
+				4DA6FAB52496206600F4EF1E /* BookByGenreCellTableViewCell.swift in Sources */,
 				4DA6FAA82495FFDD00F4EF1E /* BookFiles.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

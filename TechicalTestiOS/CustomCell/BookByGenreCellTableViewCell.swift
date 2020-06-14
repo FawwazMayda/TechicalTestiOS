@@ -1,5 +1,5 @@
 //
-//  UpdateCustomTableViewCell.swift
+//  BookByGenreCellTableViewCell.swift
 //  TechicalTestiOS
 //
 //  Created by Muhammad Fawwaz Mayda on 14/06/20.
@@ -8,10 +8,10 @@
 
 import UIKit
 
-class UpdateBookViewCell: UITableViewCell {
+class BookByGenreCellTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var updateBookLabel: UILabel!
-    @IBOutlet weak var updateBookImageView: UIImageView!
+    @IBOutlet weak var bookTitleLabel: UILabel!
+    @IBOutlet weak var bookImageView: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

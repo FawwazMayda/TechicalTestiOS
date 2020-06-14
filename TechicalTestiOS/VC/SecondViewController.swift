@@ -10,6 +10,7 @@ import UIKit
 
 class SecondViewController: UIViewController {
 
+    var thisGenreTitle = ""
     var selected_genre_id = 0
     let ng = NetReq()
     var forData = [Genre]()
@@ -27,6 +28,7 @@ class SecondViewController: UIViewController {
         if segue.identifier == "GenreToBook" {
             let destVC = segue.destination as? BookByGenreViewController
             destVC?.genre_id = selected_genre_id
+            destVC?.genreTitle = thisGenreTitle
         }
     }
 }
@@ -52,6 +54,7 @@ extension SecondViewController: UITableViewDataSource,UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selected_genre_id = forData[indexPath.row].id
+        thisGenreTitle = forData[indexPath.row].title
         tableView.deselectRow(at: indexPath, animated: true)
         performSegue(withIdentifier: "GenreToBook", sender: nil)
     }

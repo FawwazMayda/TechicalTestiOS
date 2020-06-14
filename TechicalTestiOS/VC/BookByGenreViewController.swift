@@ -10,12 +10,14 @@ import UIKit
 
 class BookByGenreViewController: UIViewController {
 
+    var genreTitle = ""
     var genre_id = 0
     var selectedBookId = 0
     var selectedBookGenre = ""
     let ng = NetReq()
     var bookByGenreData = [Book]()
     
+    @IBOutlet weak var genreLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +29,7 @@ class BookByGenreViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        genreLabel.text = "Genre: \(genreTitle)"
         ng.reqBookByGenre(genre_id: genre_id)
     }
     
@@ -37,6 +40,21 @@ class BookByGenreViewController: UIViewController {
             destVC?.genre = selectedBookGenre
         }
     }
+    
+    func getImageFromUrl(forCoverURL imgURL: String,for img: UIImageView) {
+          let index = imgURL.index(imgURL.startIndex, offsetBy: 9)
+          let urlSubStr = imgURL.suffix(from: index)
+          let url = "https://cabaca.id:8443/api/v2/files/covers/\(urlSubStr)&api_key=32ded42cfffb77dee86a29f43d36a3641849d4b5904aade9a79e9aa6cd5b5948"
+          let urlRequests = URL(string: url)!
+          let dataTask = URLSession.shared.dataTask(with: urlRequests) { (data, resp, error) in
+              if let imgData = data {
+                  DispatchQueue.main.async {
+                      img.image = UIImage(data: imgData)
+                  }
+              }
+          }
+          dataTask.resume()
+      }
 
 }
 
@@ -53,10 +71,16 @@ extension BookByGenreViewController: UITableViewDelegate,UITableViewDataSource {
         return bookByGenreData.count
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 90.0
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "BookByGenreCell", for: indexPath)
-        cell.textLabel?.text = bookByGenreData[indexPath.row].title
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "BookByGenreCell", for: indexPath) as? BookByGenreCellTableViewCell else { fatalError("No Custom Cell")}
+        cell.bookTitleLabel.text = bookByGenreData[indexPath.row].title
+        getImageFromUrl(forCoverURL: bookByGenreData[indexPath.row].cover_url, for: cell.bookImageView)
+        //cell.textLabel?.text = bookByGenreData[indexPath.row].title
         return cell
     }
     

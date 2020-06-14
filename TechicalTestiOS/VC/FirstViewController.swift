@@ -64,7 +64,7 @@ extension FirstViewController: UITableViewDataSource,UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "BookUpdateCell", for: indexPath) as? UpdateCustomTableViewCell else { fatalError("No custom cell") }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "BookUpdateCell", for: indexPath) as? UpdateBookViewCell else { fatalError("No custom cell") }
         cell.updateBookLabel.text = updateData[indexPath.row].title
         getImageFromUrl(forCoverURL: updateData[indexPath.row].cover_url, for: cell.updateBookImageView)
         //cell.textLabel?.text = updateData[indexPath.row].title
