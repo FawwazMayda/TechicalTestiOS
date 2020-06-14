@@ -130,23 +130,26 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Judul" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dHp-5B-7DL">
-                                <rect key="frame" x="56" y="353" width="66" height="32"/>
+                                <rect key="frame" x="56" y="353" width="295" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="26"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Genre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Njp-qP-tEF">
-                                <rect key="frame" x="56" y="409" width="47" height="21"/>
+                                <rect key="frame" x="56" y="409" width="288" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5yx-mY-AHM">
-                                <rect key="frame" x="56" y="450" width="50" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5yx-mY-AHM">
+                                <rect key="frame" x="56" y="450" width="181" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Penulis"/>
+                                <connections>
+                                    <action selector="writerButtonTapped:" destination="HTD-Zp-tSY" eventType="touchUpInside" id="gyu-FR-YmI"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="synopsis" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5He-KR-1aK">
                                 <rect key="frame" x="56" y="502" width="288" height="176"/>
@@ -160,6 +163,13 @@
                         <viewLayoutGuide key="safeArea" id="uAW-Qi-xdg"/>
                     </view>
                     <navigationItem key="navigationItem" id="zQn-IP-qWa"/>
+                    <connections>
+                        <outlet property="bookGenre" destination="Njp-qP-tEF" id="axq-HO-Zhq"/>
+                        <outlet property="bookImageView" destination="T4f-mR-bed" id="hy8-HS-aSi"/>
+                        <outlet property="bookSynopsis" destination="5He-KR-1aK" id="7UO-sh-aus"/>
+                        <outlet property="bookTitle" destination="dHp-5B-7DL" id="sqg-2h-8GI"/>
+                        <outlet property="bookWriterButton" destination="5yx-mY-AHM" id="MN1-47-w4s"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="akK-qU-i1E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

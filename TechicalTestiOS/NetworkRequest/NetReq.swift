@@ -75,20 +75,23 @@ class NetReq {
         requests.setValue("25e0bf00ab2fa7f03a9fa57035139e47ccb28c20658f6de907b8011347e369fb", forHTTPHeaderField: "x-dreamfactory-api-key")
         let task = session.dataTask(with: requests) { (data, response, error) in
             if let currentData = data {
-                self.parseBookDetail(data: currentData)
+                //self.parseBookDetail(data: currentData)
+                self.delegate?.didGetBookDetail(data: self.parseBookDetail(data: currentData))
             }
         }
         task.resume()
     }
     
-    func parseBookDetail(data: Data) {
+    func parseBookDetail(data: Data)-> BookDetail {
         do {
             let bookDetailData = try! JSONDecoder().decode(BookDetailParse.self, from: data)
             print(bookDetailData.result.title)
+            return bookDetailData.result
         } catch {
             print(error)
         }
     }
+    
     //MARK: -Book Update
     func reqBookUpdate(limit: Int) {
         let url = "https://cabaca.id:8443/api/v2/book/uptodate?limit=\(limit)"

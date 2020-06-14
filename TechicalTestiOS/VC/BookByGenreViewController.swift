@@ -11,8 +11,11 @@ import UIKit
 class BookByGenreViewController: UIViewController {
 
     var genre_id = 0
+    var selectedBookId = 0
+    var selectedBookGenre = ""
     let ng = NetReq()
     var bookByGenreData = [Book]()
+    
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +28,14 @@ class BookByGenreViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         ng.reqBookByGenre(genre_id: genre_id)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ToBookDetail" {
+            let destVC = segue.destination as? BookDetailViewController
+            destVC?.book_id = selectedBookId
+            destVC?.genre = selectedBookGenre
+        }
     }
 
 }
@@ -47,6 +58,13 @@ extension BookByGenreViewController: UITableViewDelegate,UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "BookByGenreCell", for: indexPath)
         cell.textLabel?.text = bookByGenreData[indexPath.row].title
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedBookId = bookByGenreData[indexPath.row].id
+        selectedBookGenre = bookByGenreData[indexPath.row].Genre_by_genre_id.title
+        tableView.deselectRow(at: indexPath, animated: true)
+        performSegue(withIdentifier: "ToBookDetail", sender: nil)
     }
     
     
