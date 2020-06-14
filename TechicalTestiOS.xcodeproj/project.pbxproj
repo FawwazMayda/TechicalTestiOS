@@ -25,6 +25,8 @@
 		4DA6FAB0249602BE00F4EF1E /* BookByGenreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA6FAAF249602BE00F4EF1E /* BookByGenreViewController.swift */; };
 		4DA6FAB324961B8600F4EF1E /* UpdateCustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA6FAB224961B8600F4EF1E /* UpdateCustomTableViewCell.swift */; };
 		4DA6FAB52496206600F4EF1E /* BookByGenreCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA6FAB42496206600F4EF1E /* BookByGenreCellTableViewCell.swift */; };
+		4DA6FAB7249625FC00F4EF1E /* KaryaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA6FAB6249625FC00F4EF1E /* KaryaTableViewCell.swift */; };
+		4DA6FAB92496261200F4EF1E /* WriterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA6FAB82496261200F4EF1E /* WriterDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +50,8 @@
 		4DA6FAAF249602BE00F4EF1E /* BookByGenreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookByGenreViewController.swift; sourceTree = "<group>"; };
 		4DA6FAB224961B8600F4EF1E /* UpdateCustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateCustomTableViewCell.swift; sourceTree = "<group>"; };
 		4DA6FAB42496206600F4EF1E /* BookByGenreCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookByGenreCellTableViewCell.swift; sourceTree = "<group>"; };
+		4DA6FAB6249625FC00F4EF1E /* KaryaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KaryaTableViewCell.swift; sourceTree = "<group>"; };
+		4DA6FAB82496261200F4EF1E /* WriterDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriterDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				4DA6FA8B2495FF9100F4EF1E /* FirstViewController.swift */,
+				4DA6FAB82496261200F4EF1E /* WriterDetailViewController.swift */,
 				4DA6FA8D2495FF9100F4EF1E /* SecondViewController.swift */,
 				4DA6FAAF249602BE00F4EF1E /* BookByGenreViewController.swift */,
 				4DA6FAAD2496029600F4EF1E /* BookDetailViewController.swift */,
@@ -121,6 +126,7 @@
 		4DA6FAB124961B5000F4EF1E /* CustomCell */ = {
 			isa = PBXGroup;
 			children = (
+				4DA6FAB6249625FC00F4EF1E /* KaryaTableViewCell.swift */,
 				4DA6FAB224961B8600F4EF1E /* UpdateCustomTableViewCell.swift */,
 				4DA6FAB42496206600F4EF1E /* BookByGenreCellTableViewCell.swift */,
 			);
@@ -200,6 +206,7 @@
 			files = (
 				4DA6FAA42495FFDD00F4EF1E /* WriterDetailFile.swift in Sources */,
 				4DA6FA8E2495FF9100F4EF1E /* SecondViewController.swift in Sources */,
+				4DA6FAB92496261200F4EF1E /* WriterDetailViewController.swift in Sources */,
 				4DA6FAAE2496029600F4EF1E /* BookDetailViewController.swift in Sources */,
 				4DA6FAA62495FFDD00F4EF1E /* BookDetailFiles.swift in Sources */,
 				4DA6FAA92495FFDD00F4EF1E /* BookUpdateFile.swift in Sources */,
@@ -212,6 +219,7 @@
 				4DA6FAB0249602BE00F4EF1E /* BookByGenreViewController.swift in Sources */,
 				4DA6FAA72495FFDD00F4EF1E /* GenreFiles.swift in Sources */,
 				4DA6FAB52496206600F4EF1E /* BookByGenreCellTableViewCell.swift in Sources */,
+				4DA6FAB7249625FC00F4EF1E /* KaryaTableViewCell.swift in Sources */,
 				4DA6FAA82495FFDD00F4EF1E /* BookFiles.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

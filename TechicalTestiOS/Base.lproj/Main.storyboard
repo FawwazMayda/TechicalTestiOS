@@ -226,11 +226,28 @@
                         <outlet property="bookSynopsis" destination="5He-KR-1aK" id="7UO-sh-aus"/>
                         <outlet property="bookTitle" destination="dHp-5B-7DL" id="sqg-2h-8GI"/>
                         <outlet property="bookWriterButton" destination="5yx-mY-AHM" id="MN1-47-w4s"/>
+                        <segue destination="TYx-qL-UoS" kind="show" identifier="ToWriterDetail" id="dAu-du-UBG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="akK-qU-i1E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3539.130434782609" y="-103.125"/>
+            <point key="canvasLocation" x="3419" y="-82"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="OXW-zh-brY">
+            <objects>
+                <viewController id="TYx-qL-UoS" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IRj-6P-stc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Kqf-qb-cmZ"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="rQ8-8V-uog"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1xi-Ta-Fdz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4470" y="-82"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
