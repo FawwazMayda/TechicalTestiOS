@@ -1,5 +1,5 @@
 //
-//  FirstViewController.swift
+//  BookDetailViewController.swift
 //  TechicalTestiOS
 //
 //  Created by Muhammad Fawwaz Mayda on 14/06/20.
@@ -8,13 +8,12 @@
 
 import UIKit
 
-class FirstViewController: UIViewController {
+class BookDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
         // Do any additional setup after loading the view.
     }
 
-
 }
-

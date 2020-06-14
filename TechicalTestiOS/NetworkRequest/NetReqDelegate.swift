@@ -10,4 +10,15 @@ import Foundation
 
 protocol NetReqDelegate {
     func didGetGenre(data: [Genre])
+    func didGetBookUpdate(data: [BookUpdate])
+}
+
+extension NetReqDelegate {
+    func didGetGenre(data: [Genre]) {
+        
+    }
+    
+    func didGetBookUpdate(data: [BookUpdate]) {
+        
+    }
 }

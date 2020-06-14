@@ -84,27 +84,32 @@ class NetReq {
             print(error)
         }
     }
-    
+    //MARK: -Book Update
     func reqBookUpdate(limit: Int) {
         let url = "https://cabaca.id:8443/api/v2/book/uptodate?limit=\(limit)"
                var requests = URLRequest(url: URL(string: url)!)
                requests.setValue("25e0bf00ab2fa7f03a9fa57035139e47ccb28c20658f6de907b8011347e369fb", forHTTPHeaderField: "x-dreamfactory-api-key")
                let task = session.dataTask(with: requests) { (data, response, error) in
                    if let currentData = data {
-                    self.parseBookUpdate(data: currentData)
+                    self.delegate?.didGetBookUpdate(data: self.parseBookUpdate(data: currentData))
                    }
                }
                task.resume()
     }
     
-    func parseBookUpdate(data: Data) {
+    func parseBookUpdate(data: Data)-> [BookUpdate] {
         do {
             let bookUpdateData = try! JSONDecoder().decode(BookUpdateParse.self, from: data)
             print(bookUpdateData.result[0].title)
+            return bookUpdateData.result
         } catch {
             print(error)
         }
     }
+    
+    
+    
+    //MARK: - Writer Detail
     
     func reqWriterDetail(writer_id: Int) {
         let url = "https://cabaca.id:8443/api/v2/writer/detail/\(writer_id)"
