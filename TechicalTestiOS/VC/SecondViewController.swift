@@ -18,10 +18,14 @@ class SecondViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         ng.delegate = self
-        _ = ng.reqGenre()
         tableView.delegate = self
         tableView.dataSource = self
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        ng.reqGenre()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
